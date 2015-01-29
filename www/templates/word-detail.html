@@ -1,0 +1,40 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{chat.name}}">
+  <ion-content class="padding">
+          <td-cards>
+              <td-card id="td-card" ng-repeat="card in cards" on-destroy="cardDestroyed($index)"
+              on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)"
+              on-partial-swipe="cardPartialSwipe(amt)">
+                  <div class="title">
+                      {{card.title}} 
+                      <div style="float:right;color:#222;">{{$index}}</div>
+                  </div>
+                  <div class="image" >
+                      <div class="no-text overlayBox"><div class="noBox boxed" id="centerMe" >{{card.word1}}</div></div>
+                      <img ng-src="{{card.image}}">
+                      <div class="yes-text overlayBox"><div class="yesBox boxed" >{{card.word2}}</div></div>
+                  </div>
+                 
+              </td-card>
+              <td-card  on-destroy="cardDestroyed($index)"
+              on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)"
+              on-partial-swipe="cardPartialSwipe(amt)">
+                  <div class="title">
+                      Dobrze.. 77%
+                      
+                  </div>
+                 
+  <div class="col"> <button class="button button-positive button-block " ng-click="refreshCards()">Jeszcze raz</button>
+  
+                  <button class="button button-assertive button-block "  ng-click="endGame()">Koniec</button>
+               </div>
+               
+              </td-card>
+          </td-cards>
+  </ion-content>
+</ion-view>
