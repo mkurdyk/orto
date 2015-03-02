@@ -3,30 +3,34 @@ Create tabs with an icon and label, using the tabs-positive style.
 Each tab's child <ion-nav-view> directive will have its own
 navigation history that also transitions its views in and out.
 -->
-<ion-tabs class="tabs-icon-top tabs-striped tabs-positive">
+<ion-tabs class="tabs-icon-top tabs-color-active-positive tabs-striped">
 
 
   <!-- Dashboard Tab -->
-  <ion-tab title="Start" icon="ion-ios7-home" href="#/tab/dash">
+  <ion-tab title="Start" icon-on="ion-ios7-home" icon-off="ion-ios7-home" href="#/tab/dash">
     <ion-nav-view name="tab-dash"></ion-nav-view>
   </ion-tab>
 
 
   <!-- Chats Tab -->
-  <ion-tab title="Graj" icon-off="ion-ios7-star" icon-on="ion-ios7-star" href="#/tab/chats">
+  <ion-tab title="Gra" icon-on="ion-help-circled" icon-off="ion-help-circled" href="#/tab/chats" >
     <ion-nav-view name="tab-chats"></ion-nav-view>
   </ion-tab>
 
   <!-- Friends Tab -->
-  <ion-tab title="Ortografia" icon-off="ion-ios7-paper" icon-on="ion-ios7-paper" href="#/tab/friends">
+  <ion-tab title="Ortografia" icon-off="ion-ios7-paper" icon-on="ion-ios7-paper" href="#/tab/friends" >
     <ion-nav-view name="tab-friends"></ion-nav-view>
   </ion-tab>
 
 
   <!-- Account Tab -->
-  <ion-tab title="Ustawienia" icon-off="ion-settings" icon-on="ion-settings" href="#/tab/account">
+  <ion-tab title="Ustawienia" icon-off="ion-settings" icon-on="ion-settings" href="#/tab/account" >
     <ion-nav-view name="tab-account"></ion-nav-view>
   </ion-tab>
 
-
+<!--
+   <ion-tab title="PRO" icon-off="ion-buy" icon-on="ion-buy" href="#/tab/account">
+    <ion-nav-view name="tab-buy"></ion-nav-view>
+  </ion-tab>
+  -->
 </ion-tabs>

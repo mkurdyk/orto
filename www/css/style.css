@@ -1,87 +1,143 @@
-/* Card styling */
- 
-td-cards {
-    display: block;
+/* Your app's CSS, go crazy, make it your own */
+
+.ionic-logo {
+  display: block;
+  margin: 15px auto;
+  width: 96px;
+  height: 96px;
 }
- 
-td-card {
-    position: absolute;
-    left: 50%;
-    margin: 0 0 0 -150px;
-    width: 300px;
-    height: 300px;
-    border: 1px solid #999;
-    box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
-    border-radius: 6px;
-    background-color: rgb(255,255,255);
+
+.pane {
+  background-color: #333;
 }
- 
-.td-card .title {
-    
-    height: 50px;
-    font-size: 24px;
-    padding:10px;
-    font-weight: 500; 
+
+.bar.bar-transparent {
+  background-color: transparent;
+  background-image: none;
+  border: none;
 }
- 
-td-card .image {
-    position: absolute;
-    top: 45px;
-    width: 100%;
-   
+
+.bar .title {
+  color: #eee;
 }
- 
-td-card img {
-    height: 258px;
-    width: 100%;
-    border-radius: 6px;
-     opacity: 0.5;
+
+.swipe-cards {
+  /*position: fixed; */
+  display:block;
 }
- 
-/* Overlay styling*/
- 
-.overlayBox {
-    position: absolute;
-    left: 50%;
-    height: 98%;
-    width: 100%;
-    top: -80px;
-    opacity: 0;
-    margin: 80px 0 0 -149px;
+
+swipe-card {
+  display: none;
+  position: absolute;
+  -webkit-transform: scale(1,1);
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  margin-left: -150px;
+  margin-top:80px;
+  box-sizing: border-box;
+  background-color: rgb(255,255,255);
+  border-radius: 4px;
+  border: 0;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.3);
+  overflow: hidden;
+  background-color: #30BD8A;
+  -webkit-animation-fill-mode: forwards;
 }
- 
-.boxed {
-    height: 40px;
-    width: 160px;
-    padding: 10px;
-    border-radius: 6px;
-    font-size: 22px;
+
+swipe-card .title {
+    display:inline;
+  color: #000;
+  float:right;
 }
- 
-.yes-text {
-    background-color: rgba(256,0,0,0.2);
-}
- 
-.yesBox {
-    margin: 10% 60% 0% 10%;
-    border: 2px solid #FF0000;
-    color: rgb(256, 0, 0);
+swipe-card .image {
+    position: relative;
+  overflow: hidden;
+  max-height: 250px;
   
+
 }
- 
-.no-text {
-    background-color: rgba(256,0,0,0.2);
+swipe-card .button {
+  border: none;
 }
- 
-.noBox {
-    margin: 10% 10% 0% 40%;
-    border: 2px solid #FF0000;
-    color: rgb(256, 0, 0);
- 
+swipe-card .image img {
+  width: 100%;
+  
+  border-radius: 4px 4px 0px 0px;
 }
- 
-.fade {
-    -webkit-transition: 0.2s opacity linear;
-    transition: 0.2s opacity linear;
-    opacity: 0;
+
+#start-card {
+  color: #fff;
+  background-color: #30BD8A;
+  line-height: 300px;
+  word-wrap: break-word;
+  border: 6px solid #4CD68E;
+  text-align: center;
 }
+#start-card span {
+  display: inline-block;
+  line-height: 40px;
+  width: 200px;
+  font-size: 30px;
+  vertical-align: middle;
+}
+
+#footer .button {
+  color: #fff;
+}
+
+@-webkit-keyframes bounceIn {
+  0% {
+    -webkit-transform: scale(0,0);
+  }
+  70% {
+    -webkit-transform: scale(1.2,1.2);
+  }
+  100% {
+    -webkit-transform: scale(1,1);
+  }
+}
+
+swipe-card.pop-in-start {
+  -webkit-transform: scale(0,0);
+}
+swipe-card.pop-in {
+  -webkit-animation: bounceIn 0.4s ease-out;
+}
+
+
+.popup-head {
+ background-color : #30BD8A;
+  color: #fff !important;
+  font-size: 20px;
+}
+
+.popup-head h3{
+
+  color: #fff;
+  font-size: 18px;
+}
+
+.popup-body {
+  text-align: center;
+  color: #000;
+  font-size: 16px;
+}
+
+
+.scroll-content#bgApp {
+  background: url('../img/splash.png') no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+}
+
+/*
+.pane {
+        background: url('../img/splash.png') no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        
+    }
+    */

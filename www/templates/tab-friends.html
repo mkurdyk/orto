@@ -1,7 +1,7 @@
-<ion-view view-title="Ortografia">
-  <ion-content>
+<ion-view view-title="Ortografia" class="pane">
+  <ion-content class="padding-top" id="bgApp">
     <ion-list>
-      <ion-item class="item-avatar" ng-repeat="friend in friends" type="item-text-wrap" href="#/tab/friend/{{friend.id}}">
+      <ion-item class="item-avatar item-stable" ng-repeat="friend in friends" type="item-text-wrap" href="#/tab/friend/{{friend.id}}">
         <img ng-src="{{friend.face}}">
         <h2>{{friend.name}}</h2>
       </ion-item>

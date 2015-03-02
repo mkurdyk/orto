@@ -5,36 +5,70 @@
   The Friends service returns an array of friend data
 -->
 <ion-view view-title="{{chat.name}}">
-  <ion-content class="padding">
-          <td-cards>
-              <td-card id="td-card" ng-repeat="card in cards" on-destroy="cardDestroyed($index)"
-              on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)"
-              on-partial-swipe="cardPartialSwipe(amt)">
-                  <div class="title">
-                      {{card.title}} 
-                      <div style="float:right;color:#222;">{{$index}}</div>
+  <ion-content class="padding-top"  ng-controller="CardsCtrl" id="bgApp">
+    
+          <swipe-cards>
+          
+            
+             <swipe-card on-card-swipe="cardSwiped()" id="start-card" >
+                Przewiń w dół aby pominąć słowo
+             </swipe-card>
+            
+              <!--
+              <td-card id="td-card" class="card-{{$index}}" ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)"  on-partial-swipe="cardPartialSwipe(amt)" > 
+              
+              <div class="title">
+                    {{(settings.number-points.total)}}
                   </div>
+               -->
+             <swipe-card id="td-card" ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-card-swipe="cardSwiped($index)">
+             <div ng-controller="CardCtrl">
+                
                   <div class="image" >
-                      <div class="no-text overlayBox"><div class="noBox boxed" id="centerMe" >{{card.word1}}</div></div>
-                      <img ng-src="{{card.image}}">
-                      <div class="yes-text overlayBox"><div class="yesBox boxed" >{{card.word2}}</div></div>
+                     
+                      <img ng-if="card.image" ng-src="{{card.image}}">
+                      
+                      <!--<div class="no-text overlayBox"><div class="noBox boxed" id="centerMe" ></div></div>
+                      
+                      <div class="yes-text overlayBox"><div class="yesBox boxed" ></div></div>
+                      -->
+                  </div>
+                 <div class="button-bar">
+            <button class="button button-stable" style="margin-right:1px;" ng-click="goAway($index,card.word1)" ng-bind-html="card.word1"  >{{card.word1}}</button>
+           
+            <button class="button button-stable" ng-click="goAway($index,card.word2)" ng-bind-html="card.word2">{{card.word2}}</button>
+          </div>
+             </div>
+               </swipe-card>
+              <!--
+              <div id="td-info"  >
+                <div  class="title">
+                      TWÓJ WYNIK: {{points.last}} pkt
+                   
                   </div>
                  
-              </td-card>
-              <td-card  on-destroy="cardDestroyed($index)"
-              on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)"
-              on-partial-swipe="cardPartialSwipe(amt)">
-                  <div class="title">
-                      Dobrze.. 77%
-                      
+  <div class="col"> <button class="button button-positive button-block " ng-click="refreshCards()">Zagraj ponownie</button>
+  
+                  <button class="button button-assertive button-block "  ng-click="endGame()">Koniec</button>
+               </div>  
+               
+              </div>
+              -->
+          </swipe-cards>
+  
+      <!--
+              <div  ng-if="" >
+                <div  class="title">
+                      WYNIK: {{points}} pkt
+                   
                   </div>
                  
   <div class="col"> <button class="button button-positive button-block " ng-click="refreshCards()">Jeszcze raz</button>
   
                   <button class="button button-assertive button-block "  ng-click="endGame()">Koniec</button>
-               </div>
+               </div>  
                
-              </td-card>
-          </td-cards>
+              </div>
+              -->
   </ion-content>
 </ion-view>

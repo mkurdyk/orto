@@ -1,8 +1,23 @@
 <ion-view view-title="Ustawienia">
-  <ion-content>
+  <ion-content class="padding-top" data-ng-controller="AccountCtrl" id="bgApp">
     <ion-list>
-      <ion-item class="item-toggle">
-        Dźwięk
+      <ion-item class="item item-select">
+        Liczba pytań
+        <label class="select">
+          <select type="select" ng-model="settings.number">
+              <option selected value="10">10</option>
+              <option value="20" disabled>20</option>
+              <option value="30" disabled>30</option>
+              <option value="50" disabled>50</option>
+              <option value="100" disabled>100</option>
+          </select>
+          <div class="track">
+            <div class="select"></div>
+          </div>
+        </label>
+      </ion-item>
+      <ion-item class="item item-toggle">
+        Dźwięk - błędna odpowiedź
         <label class="toggle">
           <input type="checkbox" ng-model="settings.sound">
           <div class="track">
@@ -10,14 +25,24 @@
           </div>
         </label>
       </ion-item>
-      <ion-item class="item-toggle">
-        Wibracja
+      <ion-item class="item item-toggle">
+        Wibracja - błędna odpowiedź
         <label class="toggle">
           <input type="checkbox" ng-model="settings.vibe">
           <div class="track">
             <div class="handle"></div>
           </div>
         </label>
+      </ion-item>
+        <ion-item class="item-divider ">  </ion-item>
+        <ion-item class="item item-button-right">
+        Odblokuj - pełna wersja
+        
+    <button class="button button-positive" ng-click="redirectLandingPage()">
+      <i class="icon ion-ios7-unlocked"></i>
+    </button>
+
+      
       </ion-item>
     </ion-list>
   </ion-content>

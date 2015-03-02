@@ -1,21 +1,30 @@
-<ion-view view-title="ORTO GRA">
-  <ion-content class="padding">
-    <div class="list card">
-      <div class="item item-divider">Ostani Wynik</div>
+<ion-view view-title="OrtoGra" class="pane text-center">
+  <ion-content class="padding-top" id="bgApp" > 
+      <div ng-controller="DashCtrl" >
+          <!--
+    <div class="list card " >
+      <div class="item item-divider item-balanced">Twój wynik</div>
       <div class="item item-body">
-        <div>
-          Dostatecznie.. <b>62%</b>
-        </div>
+        <div style="line-height:30px;">
+            <b><span ng-if="points.total">{{(points.last/(points.total)*100)| number:0}}% ({{points.last}} / {{points.total}})</span><span ng-if="!points.total">0 % (0 / 0)</span> </b>
+          &nbsp; <button class="button button-clean button-small ion-refresh " ng-click="resetPoints()"></button>
+                     
+        </div> 
       </div>
     </div>
-    <div class="list card">
-      <div class="item item-divider">Najlepszy Wynik</div>
-      <div class="item item-body">
-        <div>
-          Bardzo dobrze. <b>92%</b>
-        </div>
+          -->
+    <div class="list card" >
+     
+      <div class="item item-image item-balanced" >
+         
+          <div class="image" >
+             <img ng-src="{{wordImageDay}}" >
+          </div>
       </div>
+         <div class="item item-divider item-balance" ng-bind-html="wordDay">{{wordDay}}</div>
     </div>
-   
+          
+          <button class="button  button-large icon-right ion-chevron-right button-positive" ng-click="loadGame()">Zagraj teraz</button>
+      </div>
   </ion-content>
 </ion-view>

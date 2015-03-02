@@ -23,16 +23,19 @@
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
     <script src="lib/collide/collide.js"></script>
-    <script src="lib/ionic-contrib-tinder-cards/ionic.tdcards.js"></script>
+    <script src="js/cordovaVibrationModule.js"></script>
+    <script src="js/angular-admob.js"></script>
+    <script src="js/ionic.swipecards.js"></script>
   
   </head>
-  <body ng-app="starter">
+  <body ng-app="starter" no-scroll>
     <!--
       The nav bar that will be updated as we navigate between views.
     -->
     <ion-nav-bar class="bar-positive">
       <ion-nav-back-button>
       </ion-nav-back-button>
+        <ion-nav-refresh-button></ion-nav-refresh-button>
     </ion-nav-bar>
     <!--
       The views will be rendered in the <ion-nav-view> directive below
